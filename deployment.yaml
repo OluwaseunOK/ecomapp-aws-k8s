@@ -28,7 +28,7 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: jimmyulrich/test-mysql
+      image: mariadb
   imagePullSecrets:
     - name: dockcred
 
