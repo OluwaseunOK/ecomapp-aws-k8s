@@ -29,8 +29,6 @@ spec:
   containers:
     - name: mysql
       image: mariadb
-  imagePullSecrets:
-    - name: dockcred
 
 ---
 apiVersion: v1
