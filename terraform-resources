@@ -1,0 +1,664 @@
+ # aws_instance.kubenode["node01"] will be created
+  + resource "aws_instance" "kubenode" {
+      + ami                                  = "ami-012485deee5681dc0"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.medium"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "kube_kp"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "node01"
+        }
+      + tags_all                             = {
+          + "Name"       = "node01"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + network_interface {
+          + delete_on_termination = false
+          + device_index          = 0
+          + network_card_index    = 0
+          + network_interface_id  = (known after apply)
+        }
+    }
+
+  # aws_instance.kubenode["node02"] will be created
+  + resource "aws_instance" "kubenode" {
+      + ami                                  = "ami-012485deee5681dc0"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.medium"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "kube_kp"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "node02"
+        }
+      + tags_all                             = {
+          + "Name"       = "node02"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + network_interface {
+          + delete_on_termination = false
+          + device_index          = 0
+          + network_card_index    = 0
+          + network_interface_id  = (known after apply)
+        }
+    }
+
+  # aws_instance.student_node will be created
+  + resource "aws_instance" "student_node" {
+      + ami                                  = "ami-012485deee5681dc0"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.small"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "kube_kp"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name" = "student_node"
+        }
+      + tags_all                             = {
+          + "Name"       = "student_node"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (sensitive value)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+    }
+
+  # aws_key_pair.kube_kp will be created
+  + resource "aws_key_pair" "kube_kp" {
+      + arn             = (known after apply)
+      + fingerprint     = (known after apply)
+      + id              = (known after apply)
+      + key_name        = "kube_kp"
+      + key_name_prefix = (known after apply)
+      + key_pair_id     = (known after apply)
+      + key_type        = (known after apply)
+      + public_key      = (known after apply)
+      + tags_all        = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+    }
+
+  # aws_network_interface.kubenode["controlplane"] will be created
+  + resource "aws_network_interface" "kubenode" {
+      + arn                       = (known after apply)
+      + id                        = (known after apply)
+      + interface_type            = (known after apply)
+      + ipv4_prefix_count         = (known after apply)
+      + ipv4_prefixes             = (known after apply)
+      + ipv6_address_count        = (known after apply)
+      + ipv6_address_list         = (known after apply)
+      + ipv6_address_list_enabled = false
+      + ipv6_addresses            = (known after apply)
+      + ipv6_prefix_count         = (known after apply)
+      + ipv6_prefixes             = (known after apply)
+      + mac_address               = (known after apply)
+      + outpost_arn               = (known after apply)
+      + owner_id                  = (known after apply)
+      + private_dns_name          = (known after apply)
+      + private_ip                = (known after apply)
+      + private_ip_list           = (known after apply)
+      + private_ip_list_enabled   = false
+      + private_ips               = (known after apply)
+      + private_ips_count         = (known after apply)
+      + security_groups           = (known after apply)
+      + source_dest_check         = true
+      + subnet_id                 = "subnet-0197634d4383f4580"
+      + tags                      = {
+          + "Name" = "controlplane"
+        }
+      + tags_all                  = {
+          + "Name"       = "controlplane"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+    }
+
+  # aws_network_interface.kubenode["node01"] will be created
+  + resource "aws_network_interface" "kubenode" {
+      + arn                       = (known after apply)
+      + id                        = (known after apply)
+      + interface_type            = (known after apply)
+      + ipv4_prefix_count         = (known after apply)
+      + ipv4_prefixes             = (known after apply)
+      + ipv6_address_count        = (known after apply)
+      + ipv6_address_list         = (known after apply)
+      + ipv6_address_list_enabled = false
+      + ipv6_addresses            = (known after apply)
+      + ipv6_prefix_count         = (known after apply)
+      + ipv6_prefixes             = (known after apply)
+      + mac_address               = (known after apply)
+      + outpost_arn               = (known after apply)
+      + owner_id                  = (known after apply)
+      + private_dns_name          = (known after apply)
+      + private_ip                = (known after apply)
+      + private_ip_list           = (known after apply)
+      + private_ip_list_enabled   = false
+      + private_ips               = (known after apply)
+      + private_ips_count         = (known after apply)
+      + security_groups           = (known after apply)
+      + source_dest_check         = true
+      + subnet_id                 = "subnet-0af1786c5c43b1116"
+      + tags                      = {
+          + "Name" = "node01"
+        }
+      + tags_all                  = {
+          + "Name"       = "node01"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+    }
+
+  # aws_network_interface.kubenode["node02"] will be created
+  + resource "aws_network_interface" "kubenode" {
+      + arn                       = (known after apply)
+      + id                        = (known after apply)
+      + interface_type            = (known after apply)
+      + ipv4_prefix_count         = (known after apply)
+      + ipv4_prefixes             = (known after apply)
+      + ipv6_address_count        = (known after apply)
+      + ipv6_address_list         = (known after apply)
+      + ipv6_address_list_enabled = false
+      + ipv6_addresses            = (known after apply)
+      + ipv6_prefix_count         = (known after apply)
+      + ipv6_prefixes             = (known after apply)
+      + mac_address               = (known after apply)
+      + outpost_arn               = (known after apply)
+      + owner_id                  = (known after apply)
+      + private_dns_name          = (known after apply)
+      + private_ip                = (known after apply)
+      + private_ip_list           = (known after apply)
+      + private_ip_list_enabled   = false
+      + private_ips               = (known after apply)
+      + private_ips_count         = (known after apply)
+      + security_groups           = (known after apply)
+      + source_dest_check         = true
+      + subnet_id                 = "subnet-00e61e8003699a410"
+      + tags                      = {
+          + "Name" = "node02"
+        }
+      + tags_all                  = {
+          + "Name"       = "node02"
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+    }
+
+  # aws_network_interface_sg_attachment.controlplane_sg_attachment will be created
+  + resource "aws_network_interface_sg_attachment" "controlplane_sg_attachment" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_network_interface_sg_attachment.controlplane_sg_attachment_weave will be created
+  + resource "aws_network_interface_sg_attachment" "controlplane_sg_attachment_weave" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_network_interface_sg_attachment.node01_sg_attachment will be created
+  + resource "aws_network_interface_sg_attachment" "node01_sg_attachment" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_network_interface_sg_attachment.node01_sg_attachment_weave will be created
+  + resource "aws_network_interface_sg_attachment" "node01_sg_attachment_weave" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_network_interface_sg_attachment.node02_sg_attachment will be created
+  + resource "aws_network_interface_sg_attachment" "node02_sg_attachment" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_network_interface_sg_attachment.node02_sg_attachment_weave will be created
+  + resource "aws_network_interface_sg_attachment" "node02_sg_attachment_weave" {
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + security_group_id    = (known after apply)
+    }
+
+  # aws_security_group.controlplane will be created
+  + resource "aws_security_group" "controlplane" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "172.31.0.0/16",
+                ]
+              + description      = "API Server"
+              + from_port        = 6443
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 6443
+            },
+          + {
+              + cidr_blocks      = [
+                  + "172.31.0.0/16",
+                ]
+              + description      = "etcd"
+              + from_port        = 2379
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 2380
+            },
+          + {
+              + cidr_blocks      = []
+              + description      = "Login SSH"
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = (known after apply)
+              + self             = false
+              + to_port          = 22
+            },
+        ]
+      + name                   = "controlplane"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # aws_security_group.egress_all will be created
+  + resource "aws_security_group" "egress_all" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "egress_all"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # aws_security_group.ingress_vpc will be created
+  + resource "aws_security_group" "ingress_vpc" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "172.31.0.0/16",
+                ]
+              + description      = ""
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+            },
+        ]
+      + name                   = "ingress_vpc"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # aws_security_group.student_node will be created
+  + resource "aws_security_group" "student_node" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (sensitive value)
+      + name                   = "student_node"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # aws_security_group.weave will be created
+  + resource "aws_security_group" "weave" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = []
+              + description      = "Weave TCP"
+              + from_port        = 6783
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = (known after apply)
+              + self             = false
+              + to_port          = 6783
+            },
+          + {
+              + cidr_blocks      = []
+              + description      = "Weave UDP"
+              + from_port        = 6783
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "udp"
+              + security_groups  = (known after apply)
+              + self             = false
+              + to_port          = 6784
+            },
+        ]
+      + name                   = "weave"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # aws_security_group.workernode will be created
+  + resource "aws_security_group" "workernode" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + description      = "Node Ports"
+              + from_port        = 30000
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 32767
+            },
+          + {
+              + cidr_blocks      = []
+              + description      = "Login SSH"
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = (known after apply)
+              + self             = false
+              + to_port          = 22
+            },
+          + {
+              + cidr_blocks      = []
+              + description      = "kubelet api"
+              + from_port        = 10250
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = (known after apply)
+              + self             = false
+              + to_port          = 10250
+            },
+        ]
+      + name                   = "workernode"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = {
+          + "tf:stackid" = "kubeadm-cluster"
+        }
+      + vpc_id                 = "vpc-0921f2507ffacec41"
+    }
+
+  # local_sensitive_file.pem_file will be created
+  + resource "local_sensitive_file" "pem_file" {
+      + content              = (sensitive value)
+      + content_base64sha256 = (known after apply)
+      + content_base64sha512 = (known after apply)
+      + content_md5          = (known after apply)
+      + content_sha1         = (known after apply)
+      + content_sha256       = (known after apply)
+      + content_sha512       = (known after apply)
+      + directory_permission = "0700"
+      + file_permission      = "600"
+      + filename             = "/home/cloudshell-user/.ssh/id_rsa"
+      + id                   = (known after apply)
+    }
+
+  # tls_private_key.key_pair will be created
+  + resource "tls_private_key" "key_pair" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+Plan: 22 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + address_node01       = (known after apply)
+  + address_node02       = (known after apply)
+  + address_student_node = (known after apply)
+  + connect_student_node = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+tls_private_key.key_pair: Creating...
+aws_security_group.ingress_vpc: Creating...
+aws_security_group.egress_all: Creating...
+aws_security_group.student_node: Creating...
+aws_security_group.egress_all: Creation complete after 2s [id=sg-06d87b6c3c3db234c]
+aws_network_interface.kubenode["node01"]: Creating...
+aws_security_group.ingress_vpc: Creation complete after 2s [id=sg-0e0355758e5c25007]
+aws_network_interface.kubenode["node02"]: Creating...
+aws_security_group.student_node: Creation complete after 2s [id=sg-0f1c88892879a5503]
+aws_network_interface.kubenode["controlplane"]: Creating...
+aws_security_group.controlplane: Creating...
+aws_network_interface.kubenode["controlplane"]: Creation complete after 1s [id=eni-01299a25c3f566256]
+aws_network_interface.kubenode["node01"]: Creation complete after 1s [id=eni-0562bf9f05ab02460]
+aws_network_interface.kubenode["node02"]: Creation complete after 1s [id=eni-0ecb61c6827321f36]
+aws_security_group.controlplane: Creation complete after 2s [id=sg-086ff9a86dd18be30]
+aws_security_group.workernode: Creating...
+tls_private_key.key_pair: Creation complete after 6s [id=6be81a3456643574966c6558027dbb3cd0d28252]
+aws_key_pair.kube_kp: Creating...
+local_sensitive_file.pem_file: Creating...
+local_sensitive_file.pem_file: Creation complete after 0s [id=8de60530d47b90826299ea525c0e5b584f60bf61]
+aws_key_pair.kube_kp: Creation complete after 0s [id=kube_kp]
+aws_instance.kubenode["node01"]: Creating...
+aws_instance.student_node: Creating...
+aws_instance.kubenode["controlplane"]: Creating...
+aws_instance.kubenode["node02"]: Creating...
+aws_security_group.workernode: Creation complete after 2s [id=sg-0a5cbd128ae2d3014]
+aws_security_group.weave: Creating...
+aws_security_group.weave: Creation complete after 2s [id=sg-09458351670f5dd50]
+aws_instance.kubenode["node01"]: Still creating... [10s elapsed]
+aws_instance.student_node: Still creating... [10s elapsed]
+aws_instance.kubenode["controlplane"]: Still creating... [10s elapsed]
+aws_instance.kubenode["node02"]: Still creating... [10s elapsed]
+aws_instance.kubenode["node01"]: Creation complete after 12s [id=i-0b908727afb47ea1f]
+aws_network_interface_sg_attachment.node01_sg_attachment: Creating...
+aws_network_interface_sg_attachment.node01_sg_attachment_weave: Creating...
+aws_instance.kubenode["controlplane"]: Creation complete after 13s [id=i-06e7eae83fd9c2d45]
+aws_instance.kubenode["node02"]: Creation complete after 13s [id=i-0ab9aa4bf9768950e]
+aws_instance.student_node: Creation complete after 13s [id=i-08603715ea6113579]
+aws_network_interface_sg_attachment.node02_sg_attachment_weave: Creating...
+aws_network_interface_sg_attachment.controlplane_sg_attachment: Creating...
+aws_network_interface_sg_attachment.controlplane_sg_attachment_weave: Creating...
+aws_network_interface_sg_attachment.node02_sg_attachment: Creating...
+aws_network_interface_sg_attachment.node01_sg_attachment: Creation complete after 0s [id=sg-0a5cbd128ae2d3014_eni-0562bf9f05ab02460]
+aws_network_interface_sg_attachment.node02_sg_attachment_weave: Creation complete after 0s [id=sg-09458351670f5dd50_eni-0ecb61c6827321f36]
+aws_network_interface_sg_attachment.controlplane_sg_attachment: Creation complete after 1s [id=sg-086ff9a86dd18be30_eni-01299a25c3f566256]
+aws_network_interface_sg_attachment.node01_sg_attachment_weave: Creation complete after 1s [id=sg-09458351670f5dd50_eni-0562bf9f05ab02460]
+aws_network_interface_sg_attachment.node02_sg_attachment: Creation complete after 1s [id=sg-0a5cbd128ae2d3014_eni-0ecb61c6827321f36]
+aws_network_interface_sg_attachment.controlplane_sg_attachment_weave: Creation complete after 1s [id=sg-09458351670f5dd50_eni-01299a25c3f566256]
+
+Apply complete! Resources: 22 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+address_node01 = "44.211.86.24"
+address_node02 = "54.161.160.254"
+address_student_node = "3.88.242.35"
+connect_student_node = <<EOT
+Use the following command to log into student-node
+
+  ssh ubuntu@3.88.242.35
+
+You should wait till all instances are fully ready in the EC2 console.
+The Status Check colunm should contain "2/2 checks passed"
+
+
+EOT
