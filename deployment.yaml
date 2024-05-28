@@ -40,11 +40,6 @@ metadata:
   namespace: default
 
 spec:
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
     - port: 30000
       protocol: TCP
