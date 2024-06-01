@@ -3,7 +3,6 @@ data:
   .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJqaW1teXVscmljaCIsInBhc3N3b3JkIjoiZG9ja2VyamltbXk5OS4iLCJlbWFpbCI6ImppbW15dWxyaWNoNDhAZ21haWwuY29tIiwiYXV0aCI6ImFtbHRiWGwxYkhKcFkyZzZaRzlqYTJWeWFtbHRiWGs1T1M0PSJ9fX0=
 kind: Secret
 metadata:
-  creationTimestamp: "2024-05-24T21:05:42Z"
   name: dockcred
   namespace: default
   resourceVersion: "4576"
@@ -39,7 +38,7 @@ metadata:
   labels:
     app: web
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: web
@@ -71,7 +70,7 @@ metadata:
   labels:
     app: db
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: db
