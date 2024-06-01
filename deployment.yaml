@@ -51,6 +51,9 @@ spec:
       containers:
         - name: apache
           image: 787379092555.dkr.ecr.us-east-1.amazonaws.com/ecomapp-aws-k8s
+          envFrom:
+            - configMapRef:
+                name: ecom
           env:
             #- name: DB_USER
             # value: "wronguser"
@@ -58,6 +61,16 @@ spec:
               value: "true"
             - name: DB_HOST
               value: "mysql"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ecom
+                  key: DB_PASSWORD
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: ecom
+                  key: DB_USER
 
       imagePullSecrets:
         - name: dockcred
