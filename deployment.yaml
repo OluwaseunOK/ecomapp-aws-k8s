@@ -37,16 +37,16 @@ kind: Deployment
 metadata:
   name: apache
   labels:
-    app: apache
+    app: web
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: apache
+      app: web
   template:
     metadata:
       labels:
-        app: apache
+        app: web
       name: apache
     spec:
       containers:
@@ -104,7 +104,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: mysql
+    app: db
   name: mysql
   namespace: default
 spec:
@@ -117,7 +117,7 @@ spec:
       protocol: TCP
       targetPort: 3306
   selector:
-    app: mysql
+    app: db
   sessionAffinity: None
   type: ClusterIP
 status:
