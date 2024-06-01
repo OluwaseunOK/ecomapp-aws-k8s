@@ -1,4 +1,3 @@
-
 apiVersion: v1
 data:
   .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJqaW1teXVscmljaCIsInBhc3N3b3JkIjoiZG9ja2VyamltbXk5OS4iLCJlbWFpbCI6ImppbW15dWxyaWNoNDhAZ21haWwuY29tIiwiYXV0aCI6ImFtbHRiWGwxYkhKcFkyZzZaRzlqYTJWeWFtbHRiWGs1T1M0PSJ9fX0=
@@ -11,10 +10,7 @@ metadata:
   uid: a08a8b72-2bdc-47bf-9756-75efacc6311d
 type: kubernetes.io/dockerconfigjson
 
-
 ---
-
-
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -35,10 +31,7 @@ data:
 
     INSERT INTO products (Name,Price,ImageUrl) VALUES ("Laptop","100","c-1.png"),("Drone","200","c-2.png"),("VR","300","c-3.png"),("Tablet","50","c-5.png"),("Watch","90","c-6.png"),("Phone Covers","20","c-7.png"),("Phone","80","c-8.png"),("Laptop","150","c-4.png");
 
-
-
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -57,60 +50,56 @@ spec:
       name: apache
     spec:
       containers:
-      - name: apache
-        image: 787379092555.dkr.ecr.us-east-1.amazonaws.com/ecomapp-aws-k8s
-        env:
-        #- name: DB_USER
-         # value: "wronguser"
-        - name:  FEATURE_DARK_MODE
-          value: "true"
-        - name: DB_HOST
-          value: "mysql"
+        - name: apache
+          image: 787379092555.dkr.ecr.us-east-1.amazonaws.com/ecomapp-aws-k8s
+          env:
+            #- name: DB_USER
+            # value: "wronguser"
+            - name: FEATURE_DARK_MODE
+              value: "true"
+            - name: DB_HOST
+              value: "mysql"
 
       imagePullSecrets:
-      - name: dockcred
-
+        - name: dockcred
 
 ---
-
 apiVersion: apps/v1
-   kind: Deployment
-   metadata:
-     name: mariadb
-     labels:
-       app: db
+kind: Deployment
+metadata:
+  name: mariadb
+  labels:
+    app: db
 spec:
-     replicas: 2
-     selector:
-       matchLabels:
-         app: db
-     template:
-       metadata:
-         labels:
-           app: db
-         name: mariadb
-       spec:
-         containers:
-         - name: mariadb
-           image: mariadb
-            
-           env:
-           - name: MYSQL_ALLOW_EMPTY_PASSWORD
-             value: "true"
-           ports:
-           - containerPort: 3306
-           volumeMounts:
-           - name: my-script-volume
-             mountPath: /docker-entrypoint-initdb.d/
-         volumes:
-         - name: my-script-volume
-           configMap:
-             name: my-script-configmap
-             defaultMode: 0744
+  replicas: 2
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+      name: mariadb
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb
 
+          env:
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: "true"
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: my-script-volume
+              mountPath: /docker-entrypoint-initdb.d/
+      volumes:
+        - name: my-script-volume
+          configMap:
+            name: my-script-configmap
+            defaultMode: 0744
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -121,12 +110,12 @@ metadata:
 spec:
   internalTrafficPolicy: Cluster
   ipFamilies:
-  - IPv4
+    - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - port: 3306
-    protocol: TCP
-    targetPort: 3306
+    - port: 3306
+      protocol: TCP
+      targetPort: 3306
   selector:
     app: mysql
   sessionAffinity: None
@@ -134,10 +123,7 @@ spec:
 status:
   loadBalancer: {}
 
-
 ---
-
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -147,10 +133,10 @@ metadata:
   namespace: default
 spec:
   ports:
-  - nodePort: 30941
-    port: 30000
-    protocol: TCP
-    targetPort: 80
+    - nodePort: 30941
+      port: 30000
+      protocol: TCP
+      targetPort: 80
   selector:
     app: web
   sessionAffinity: None
