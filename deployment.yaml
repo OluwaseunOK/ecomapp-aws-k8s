@@ -79,7 +79,7 @@ apiVersion: apps/v1
      name: mariadb
      labels:
        app: db
-   spec:
+spec:
      replicas: 2
      selector:
        matchLabels:
