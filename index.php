@@ -119,8 +119,8 @@
                         $dbPassword =   getenv('DB_PASSWORD'); //"Ecompasswd99."
                         $dbName =  getenv('DB_NAME'); //"ecomdb"
 
-                        debug_to_console(getenv('PATH'));
-                        phpinfo(INFO_ENVIRONMENT);
+                        //debug_to_console(getenv('PATH'));
+                        //phpinfo(INFO_ENVIRONMENT);
 
 
                         // Attempt to connect to the database
