@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 787379092555.dkr.ecr.us-east-1.amazonaws.com/ecomapp-aws-k8s
+  repository: mariadb
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -43,7 +43,7 @@ securityContext:
 
 service:
   type: ClusterIP
-  port: 80
+  port: 3306
 
 ingress:
   enabled: false
@@ -75,14 +75,16 @@ resources:
   #   cpu: 100m
   #   memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+#livenessProbe:
+ # tcpSocket:
+   # port: 8080
+  #initialDelaySeconds: 15
+  #periodSeconds: 10
+#readinessProbe:
+ #tcpSocket:
+   #port: 8080
+  #initialDelaySeconds: 15
+  #periodSeconds: 10
 
 autoscaling:
   enabled: false
@@ -92,20 +94,24 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
-volumes: []
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
+volumes: 
+ - name: my-script-volume
+   configMap:
+     configMapName: my-script-configmap
+     defaultMode: 0744
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
+volumeMounts: 
+ - name: my-script-volume
+   mountPath: "/docker-entrypoint-initdb.d/"
+   readOnly: true
 
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
+
+env:
+  - name: "MYSQL_ALLOW_EMPTY_PASSWORD"
+    value: "true"

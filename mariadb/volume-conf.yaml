@@ -1,0 +1,4 @@
+- name: my-script-volume
+  configMap:
+     name: my-script-configmap
+     defaultMode: 0744

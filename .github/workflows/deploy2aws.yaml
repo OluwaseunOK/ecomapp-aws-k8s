@@ -39,6 +39,6 @@ jobs:
       - name: Update kube config
         run: aws eks update-kubeconfig --name cluster1
 
-      - name: Deploy to EKS
+      - name: Deploy to EKS using helmfile
         run: |
-          kubectl apply -f deployment.yaml
+          helmfile sync

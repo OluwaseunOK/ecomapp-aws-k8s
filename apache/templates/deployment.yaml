@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache
+  labels:
+    app: web
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: apache
+      labels:
+        app: web
+    spec:
+      imagePullSecrets:
+      - name: dockcred
+      containers:
+        - name: apache
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag}}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+            - containerPort: 8080
+              name: probe 
+          envFrom:
+            - configMapRef:
+                name: ecom
+          env:
+            {{- range $key, $val := .Values.env }}
+              - name: {{ $val.name }}
+                valueFrom:
+                  secretKeyRef:
+                    name: ecom
+                    key: {{ $val.name }}
+            {{- end }}
+          livenessProbe:
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.readinessProbe | nindent 12 }}
+
