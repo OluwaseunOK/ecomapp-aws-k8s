@@ -41,7 +41,5 @@ jobs:
 
       - name: Deploy to EKS using helmfile
         run: |
-          wget https://github.com/roboll/helmfile/releases/download/v0.144.0/helmfile_linux_amd64
-          mv helmfile_linux_amd64 helmfile
-          chmod 777 helmfile
-          helmfile sync
+          helm install web apache
+          helm install db mariadb
