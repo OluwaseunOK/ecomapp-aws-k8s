@@ -1,0 +1,10 @@
+---
+releases:
+
+  - name: web
+    chart: ./apache
+    installed: true
+
+  - name: db
+    chart: ./mariadb
+    installed: true
